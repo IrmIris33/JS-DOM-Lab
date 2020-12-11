@@ -3,8 +3,8 @@
 
 
 const calculate = () => {
-    const fv = document.getElementById('fahv').value;
-
+    const fv = parseFloat(document.getElementById('fahv').value);
+        
     let newfahv = (fv);
     console.log(newfahv); //verified the calculation
     document.getElementById("fahv2").value = newfahv;
@@ -15,13 +15,13 @@ const calculate = () => {
     document.getElementById("celv").value = newcelv;
 
 
-    let newkelv =((fv - 32) / 1.8) + 273.15;
+    let newkelv = parseFloat((fv - 32) / 1.8) + 273.15;
     console.log(newkelv); //verified the calculation
     document.getElementById("kelv").value = newkelv;
 
 
-    let newrankv = [fv] + 459.67;
-    console.log(newrankv); //return temp is not correct
+    let newrankv = parseFloat(fv + 459.67).toFixed(2);
+    console.log(newrankv); //verified the calculation
     document.getElementById("rankv").value = newrankv;
 
 }
